@@ -18,7 +18,6 @@ function App() {
     //enviar una solicitud get
     const respuesta = await fetch('https://thesimpsonsquoteapi.glitch.me/quotes');
     const datos = await respuesta.json();
-    console.log(datos[0])
     //respuesta
     //almacenar la respuesta en el state
     setFrasePersonaje(datos[0])
@@ -27,7 +26,7 @@ function App() {
   return (
     <Container className="text-center my-5">
       <img src={logo} alt="Logo simpson" className="w-50 mb-4"/>
-      <Frase></Frase>
+      <Frase frasePersonaje={frasePersonaje}></Frase>
       <Button variant="warning" className="mt-4">Enviar</Button>
     </Container>
   )
